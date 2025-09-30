@@ -7,6 +7,9 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { UserDevice } from './user-device.entity';
+import { Account } from './account.entity';
+import { Category } from './category.entity';
+import { Transaction } from './transaction.entity';
 
 export enum UserRole {
   USER = 'user',
@@ -60,4 +63,13 @@ export class User {
 
   @OneToMany(() => UserDevice, (device) => device.user)
   devices: UserDevice[];
+
+  @OneToMany(() => Account, (account) => account.user)
+  accounts: Account[];
+
+  @OneToMany(() => Transaction, (txn) => txn.user)
+  transactions: Transaction[];
+
+  @OneToMany(() => Category, (cat) => cat.user)
+  categories: Category[];
 }

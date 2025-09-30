@@ -22,6 +22,9 @@ import { UserDevice } from './entities/user-device.entity';
 import { Payment } from './entities/payment.entity';
 import { Notification } from './entities/notification.entity';
 import { NotificationToken } from './entities/notificationToken.entity';
+import { Account } from './entities/account.entity';
+import { Transaction } from './entities/transaction.entity';
+import { Category } from './entities/category.entity';
 
 @Module({
   imports: [
@@ -85,6 +88,9 @@ import { NotificationToken } from './entities/notificationToken.entity';
             Payment,
             Notification,
             NotificationToken,
+            Account,
+            Transaction,
+            Category,
           ],
           synchronize: config.get('NODE_ENV') !== 'production',
           namingStrategy: new SnakeNamingStrategy(),
